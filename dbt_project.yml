@@ -1,7 +1,11 @@
+name: 'my_dbt_project'
+version: '1.0'
+config-version: 2
 
+profile: 'my_postgres_db'
 
 profiles:
-  my_postgres_db:   # Use any profile name you prefer
+  my_postgres_db:   
     target: dev     # Use any target name you prefer
     outputs:
       dev:
