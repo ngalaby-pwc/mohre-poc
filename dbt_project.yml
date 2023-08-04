@@ -6,16 +6,16 @@ profile: 'my_postgres_db'
 
 profiles:
   my_postgres_db:   
-    target: dev     # Use any target name you prefer
+    target: dev     
     outputs:
       dev:
         type: postgres
-        host: YOUR_POSTGRES_HOST
-        port: YOUR_POSTGRES_PORT
-        user: YOUR_POSTGRES_USER
-        pass: YOUR_POSTGRES_PASSWORD
-        dbname: YOUR_POSTGRES_DATABASE
-        schema: YOUR_TARGET_SCHEMA
+        host: 127.0.0.1
+        port: 5432
+        user: postgres
+        pass: 12345678
+        dbname: mydb
+        schema: myschema
 
 
 models:
@@ -26,3 +26,5 @@ models:
     sales:
       schema: my_source_schema
       table: sales
+
+      
