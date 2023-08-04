@@ -1,0 +1,24 @@
+
+
+profiles:
+  my_postgres_db:   # Use any profile name you prefer
+    target: dev     # Use any target name you prefer
+    outputs:
+      dev:
+        type: postgres
+        host: YOUR_POSTGRES_HOST
+        port: YOUR_POSTGRES_PORT
+        user: YOUR_POSTGRES_USER
+        pass: YOUR_POSTGRES_PASSWORD
+        dbname: YOUR_POSTGRES_DATABASE
+        schema: YOUR_TARGET_SCHEMA
+
+
+models:
+  sample_data:
+    customers:
+      schema: my_source_schema
+      table: customers
+    sales:
+      schema: my_source_schema
+      table: sales
