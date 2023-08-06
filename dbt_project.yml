@@ -11,12 +11,38 @@ seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
-clean-targets:         # directories to be removed by `dbt clean`
+clean-targets: 
   - "target"
-  - "dbt_packages"
+
+target-path: target
+
+vars:
+  load_date: '2023-08-05'
 
 models:
   mohre-poc:
-    # Config indicated by + and applies to all files under models/example/
-    example:
+    raw_stage:
       +materialized: view
+      +tags: 
+        - "raw"
+    stage:
+      +materialized: view
+      +tags: 
+        - "stage"
+      +enabled: true
+    raw_vault:
+      +materialized: incremental
+      +tags: 
+        - "raw_vault"
+      hubs:
+        +tags: 
+          - "hub"
+      links:
+        +tags: 
+          - "link"
+      sats:
+        +tags: 
+          - "satellite"
+      t_links:
+        +tags: 
+          - "t_link"

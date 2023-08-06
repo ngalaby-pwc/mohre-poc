@@ -1,9 +1,14 @@
 -- models/raw/products.sql
 
-{{ config(materialized='table') }}
+{{ config(
+	materialized='table',
+	tags=["raw"]) }}
 
 SELECT
+    sale_id,
+    customer_id,
     product_id,
-    product_name,
-    product_category
-FROM {{ source('products') }};
+    sale_date,
+    quantity,
+    amount
+FROM myschema.sales
