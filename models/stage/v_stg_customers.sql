@@ -4,6 +4,8 @@
 {%- set yaml_metadata -%}
 
 [source_model]: 'raw_customers'
+hashed_columns:
+  CUStOMER_ID: 'customer_id'
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}
@@ -14,5 +16,5 @@
                      source_model=source_model,
                      derived_columns='none',
                      null_columns='none',
-                     hashed_columns='none',
+                     hashed_columns='hashed_columns',
                      ranked_columns='none') }}
