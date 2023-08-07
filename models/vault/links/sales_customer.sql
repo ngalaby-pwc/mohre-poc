@@ -3,7 +3,7 @@
 
 {%- set source_model = "v_stg_sales" -%}
 {%- set src_pk = "SALE_CUSTOMER_PK" -%}
-{%- set src_fk = ["SALE_PK", "CUSTOMER_PK"] -%}
+{%- set src_fk = ["SALE_PK", "customer_pk"] -%}
 {%- set src_ldts = "LOAD_DATE" -%}
 {%- set src_source = "RECORD_SOURCE" -%}
 

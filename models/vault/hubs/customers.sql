@@ -1,8 +1,8 @@
 {{ config(materialized='incremental') }}
 
 {% set source_model = "v_stg_customers" %}
-{% set src_pk = "CUSTOMER_PK" %}
-{% set src_nk = "CUSTOMER_ID" %}
+{% set src_pk = "customer_pk" %}
+{% set src_nk = "customer_id" %}
 {% set src_ldts = "LOAD_DATE" %}
 {% set src_source = "RECORD_SOURCE" %}
 
