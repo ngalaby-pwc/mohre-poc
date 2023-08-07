@@ -1,0 +1,12 @@
+version: 1
+
+api: http://0.0.0.0:8080
+
+# Define your project name
+project: MohreProject
+
+# Define the Flow's name (optional)
+flows:
+  - name: MyDbtFlow
+
+
