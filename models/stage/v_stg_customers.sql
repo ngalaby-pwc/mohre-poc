@@ -9,8 +9,7 @@ derived_columns:
   LOAD_DATE: INSERTION_DATE + INTERVAL '1 day'
   EFFECTIVE_FROM: 'INSERTION_DATE'
 hashed_columns:
-  TRANSACTION_PK:
-    - 'CUSTOMER_ID'
+  CUSTOMER_PK: 'CUSTOMER_ID'
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

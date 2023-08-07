@@ -1,5 +1,3 @@
--- models/raw/products.sql
-
 {{ config(
 	materialized='table',
 	tags=["raw"]) }}

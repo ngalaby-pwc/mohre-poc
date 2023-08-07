@@ -1,8 +1,6 @@
--- models/raw/products.sql
 
-{{ config(
-	materialized='table',
-	tags=["raw"]) }}
+{{ config(materialized='table') }}
+
 
 SELECT
     product_id,

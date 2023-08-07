@@ -30,10 +30,10 @@ models:
       +tags: 
         - "stage"
       +enabled: true
-    raw_vault:
+    vault:
       +materialized: incremental
       +tags: 
-        - "raw_vault"
+        - "vault"
       hubs:
         +tags: 
           - "hub"

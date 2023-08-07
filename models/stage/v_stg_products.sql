@@ -8,7 +8,7 @@ derived_columns:
   LOAD_DATE: INSERTION_DATE + INTERVAL '1 day'
   EFFECTIVE_FROM: 'INSERTION_DATE'
 hashed_columns:
-  TRANSACTION_PK:
+  PRODUCT_PK:
     - 'PRODUCT_ID'
 {%- endset -%}
 

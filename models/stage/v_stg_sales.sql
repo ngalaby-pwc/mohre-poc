@@ -8,8 +8,21 @@ derived_columns:
   LOAD_DATE: SALE_DATE + INTERVAL '1 day'
   EFFECTIVE_FROM: 'SALE_DATE'
 hashed_columns:
-  SALE_PK:
-    - 'SALE_ID'
+  SALE_PK: 'sale_id'
+  SALE_ORDER_PK:
+      - 'sale_id'
+      - 'PRODUCT_ID'
+  SALE_CUSTOMER_PK:
+      - 'sale_id'
+      - 'CUSTOMER_ID'
+  SALE_HASHDIFF:
+    is_hashdiff: true
+    columns:
+      - 'customer_id'
+      - 'product_id'
+      - 'sale_date'
+      - 'quantity'
+      - 'amount'
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}
