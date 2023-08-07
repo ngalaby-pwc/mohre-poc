@@ -4,7 +4,8 @@
 SELECT
     customer_id,
     customer_name,
-    customer_email
+    customer_email,
+    insertion_date
 FROM myschema.customers
 
 
