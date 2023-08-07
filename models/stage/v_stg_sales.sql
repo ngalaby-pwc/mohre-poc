@@ -9,6 +9,8 @@ derived_columns:
   EFFECTIVE_FROM: 'SALE_DATE'
 hashed_columns:
   SALE_PK: 'sale_id'
+  CUSTOMER_PK: 'CUSTOMER_ID'
+  PRODUCT_PK: 'PRODUCT_ID'
   SALE_ORDER_PK:
       - 'sale_id'
       - 'PRODUCT_ID'
