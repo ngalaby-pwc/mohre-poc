@@ -6,7 +6,7 @@
 source_model: 'raw_customers'
 derived_columns:
   RECORD_SOURCE: '!RAW_CUSTOMERS'
-  LOAD_DATE: load_date 
+  LOAD_DATE: dbt_utils.date()
   EFFECTIVE_FROM: dbt_utils.date()
 hashed_columns:
   CUSTOMER_PK: 'CUSTOMER_ID'
