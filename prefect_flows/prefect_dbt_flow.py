@@ -1,16 +1,12 @@
-from prefect import Flow, task
+from prefect import flow, task
 import subprocess
 
 @task
 def run_dbt():
-    # Replace 'dbt run' with the appropriate dbt command for your environment
     subprocess.run(['dbt', 'run'])
 
-# Create Prefect Flow
-with Flow('dbt_run_flow') as flow:
+@flow(name="dbt_run_flow")
+def run_flow():
     dbt_task = run_dbt()
 
-
-# Run the Prefect Flow
-flow.run()
 
