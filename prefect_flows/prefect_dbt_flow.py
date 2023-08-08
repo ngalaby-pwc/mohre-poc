@@ -1,13 +1,16 @@
-from prefect import flow
-from prefect_dbt.cli.commands import DbtCoreOperation
+from prefect import Flow, task
+import subprocess
 
-@flow
-def trigger_dbt_flow() -> str:
-    result = DbtCoreOperation(
-        commands=["pwd", "dbt debug", "dbt run"],
-        project_dir="/home/azureuser/mohre-poc",
-        profiles_dir="/home/azureuser/.dbt",
-    ).run()
-    return result
+@task
+def run_dbt():
+    # Replace 'dbt run' with the appropriate dbt command for your environment
+    subprocess.run(['dbt', 'run'])
 
-trigger_dbt_flow()
+# Create Prefect Flow
+with Flow('dbt_run_flow') as flow:
+    dbt_task = run_dbt()
+
+
+# Run the Prefect Flow
+flow.run()
+
