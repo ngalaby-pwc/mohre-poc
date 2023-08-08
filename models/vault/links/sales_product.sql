@@ -2,7 +2,7 @@
 {{ config(materialized='incremental') }}
 
 {%- set source_model = "v_stg_sales" -%}
-{%- set src_pk = "SALE_CUSTOMER_PK" -%}
+{%- set src_pk = "SALE_PRODUCT_PK" -%}
 {%- set src_fk = ["SALE_PK", "PRODUCT_PK"] -%}
 {%- set src_ldts = "LOAD_DATE" -%}
 {%- set src_source = "RECORD_SOURCE" -%}

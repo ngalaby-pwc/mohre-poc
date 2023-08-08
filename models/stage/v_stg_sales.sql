@@ -11,7 +11,7 @@ hashed_columns:
   SALE_PK: 'sale_id'
   CUSTOMER_PK: 'CUSTOMER_ID'
   PRODUCT_PK: 'PRODUCT_ID'
-  SALE_ORDER_PK:
+  SALE_PRODUCT_PK:
       - 'sale_id'
       - 'PRODUCT_ID'
   SALE_CUSTOMER_PK:
